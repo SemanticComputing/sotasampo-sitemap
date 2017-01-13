@@ -1,0 +1,2 @@
+numpy>=1.10.4
+SPARQLWrapper>=1.7.6

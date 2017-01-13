@@ -3,6 +3,7 @@
 """
 Sitemap generator for WarSampo, http://www.sotasampo.fi
 """
+from datetime import datetime
 from urllib.parse import quote_plus
 from time import sleep
 
@@ -30,6 +31,21 @@ def do_query(endpoint, query, retry=10):
 
     return (result['uri']['value'] for result in results["results"]["bindings"])
 
+SITEMAP_INDEX_XML = """
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+   {sitemaps}
+</sitemapindex>
+"""
+
+SITEMAP_INNER_XML = """
+   <sitemap>
+      <loc>{location}</loc>
+      <lastmod>{lastmod}</lastmod>
+   </sitemap>
+"""
+
+SITEMAP_INDEX_FILE = 'sitemap_{index}.txt'
 
 ENDPOINT = 'http://ldf.fi/warsa/sparql'
 
@@ -42,12 +58,20 @@ SELECT ?uri WHERE {
 }
 """
 
-URL_PREFIX = 'http://www.sotasampo.fi/fi/persons/?uri='
+RESOURCE_URL = 'http://www.sotasampo.fi/fi/persons/?uri={uri}'
 
-uris = ['{prefix}{uri}'.format(prefix=URL_PREFIX, uri=quote_plus(uri)) for uri in do_query(ENDPOINT, PERSON_QUERY)]
+uris = [RESOURCE_URL.format(uri=quote_plus(uri)) for uri in do_query(ENDPOINT, PERSON_QUERY)]
 chunks = np.array_split(uris, len(uris) // 50000 + 1)  # Split into chunks of less than 50000 URIs
+sitemaps = ''
 
 # Write chunks to files
 for (index, chunk) in enumerate(chunks):
-    with open('sitemap_{i}.txt'.format(i=index), 'w') as file:
+    filename = SITEMAP_INDEX_FILE.format(index=index)
+    with open(filename, 'w') as file:
         file.write('\n'.join(chunk))
+
+    sitemaps += SITEMAP_INNER_XML.format(location=filename, lastmod=datetime.now().isoformat())
+
+sitemap_index = SITEMAP_INDEX_XML.format(sitemaps=sitemaps)
+with open('sitemap_index.xml', 'w') as file:
+    file.write(sitemap_index)

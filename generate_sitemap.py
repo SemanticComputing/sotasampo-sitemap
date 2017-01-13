@@ -72,17 +72,22 @@ SELECT ?uri WHERE {
 
 RESOURCE_URL = 'http://www.sotasampo.fi/fi/persons/?uri={uri}'
 
+# Get resource URIs
+
 uris = [RESOURCE_URL.format(uri=quote_plus(uri)) for uri in do_query(ENDPOINT, PERSON_QUERY)]
 chunks = np.array_split(uris, len(uris) // 50000 + 1)  # Split into chunks of less than 50000 URIs
 sitemaps = ''
 
 # Write chunks to files
+
 for (index, chunk) in enumerate(chunks):
     filename = SITEMAP_INDEX_FILE.format(index=index)
     with open(filename, 'w') as file:
         file.write('\n'.join(chunk))
 
     sitemaps += SITEMAP_INNER_XML.format(location=filename, lastmod=datetime.utcnow().isoformat())
+
+# Write sitemap index file
 
 sitemap_index = SITEMAP_INDEX_XML.format(sitemaps=sitemaps)
 with open('sitemap_index.xml', 'w') as file:

@@ -12,6 +12,17 @@ from SPARQLWrapper import SPARQLWrapper, JSON
 
 
 def do_query(endpoint, query, retry=10):
+    """
+    Send a query to a SPARQL endpoint to retrieve URIs of resources.
+
+    :param endpoint: SPARQL endpoint
+    :type endpoint: str
+    :param query: SPARQL query, which should return URIs with variable name ?uri
+    :type query: str
+    :param retry: number of retries if the query returns a malformed answer
+    :type retry: int
+    :return: generator of URI strings
+    """
     sparql = SPARQLWrapper(endpoint)
     sparql.setQuery(query)
     sparql.setReturnFormat(JSON)
@@ -30,6 +41,7 @@ def do_query(endpoint, query, retry=10):
                 raise
 
     return (result['uri']['value'] for result in results["results"]["bindings"])
+
 
 SITEMAP_INDEX_XML = """
 <?xml version="1.0" encoding="UTF-8"?>
@@ -70,7 +82,7 @@ for (index, chunk) in enumerate(chunks):
     with open(filename, 'w') as file:
         file.write('\n'.join(chunk))
 
-    sitemaps += SITEMAP_INNER_XML.format(location=filename, lastmod=datetime.now().isoformat())
+    sitemaps += SITEMAP_INNER_XML.format(location=filename, lastmod=datetime.utcnow().isoformat())
 
 sitemap_index = SITEMAP_INDEX_XML.format(sitemaps=sitemaps)
 with open('sitemap_index.xml', 'w') as file:

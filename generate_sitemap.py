@@ -87,7 +87,7 @@ for (index, chunk) in enumerate(chunks):
     with open(filename, 'w') as file:
         file.write('\n'.join(chunk))
 
-    sitemaps += SITEMAP_INNER_XML.format(file=filename, lastmod=datetime.utcnow().isoformat())
+    sitemaps += SITEMAP_INNER_XML.format(file=filename, lastmod=datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"))
 
 # Write sitemap index file
 

@@ -1,7 +1,6 @@
 http://www.sotasampo.fi/fi/
 http://www.sotasampo.fi/fi/events/winterwar
 http://www.sotasampo.fi/fi/events/continuationwar
-http://www.sotasampo.fi/fi/persons/
 http://www.sotasampo.fi/fi/units/
 http://www.sotasampo.fi/fi/places/
 http://www.sotasampo.fi/fi/articles/

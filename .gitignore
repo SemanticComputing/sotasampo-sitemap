@@ -1,4 +1,5 @@
 .project
 .idea
 *.swp
-sitemap_*
+sitemap_generated_*.txt
+sitemap_index.xml

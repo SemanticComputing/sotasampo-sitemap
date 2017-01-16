@@ -47,7 +47,7 @@ SITEMAP_INDEX_XML = """
 <?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
    <sitemap>
-      <loc>http://www.sotasampo.fi/general_urls.txt</loc>
+      <loc>http://www.sotasampo.fi/sitemap_general.txt</loc>
       <lastmod>2017-01-16</lastmod>
    </sitemap>
    {sitemaps}
@@ -61,7 +61,7 @@ SITEMAP_INNER_XML = """
    </sitemap>
 """
 
-SITEMAP_INDEX_FILE = 'sitemap_{index}.txt'
+SITEMAP_FILENAME = 'sitemap_generated_{index}.txt'
 
 ENDPOINT = 'http://ldf.fi/warsa/sparql'
 
@@ -85,7 +85,7 @@ sitemaps = ''
 # Write chunks to files
 
 for (index, chunk) in enumerate(chunks):
-    filename = SITEMAP_INDEX_FILE.format(index=index)
+    filename = SITEMAP_FILENAME.format(index=index)
     with open(filename, 'w') as file:
         file.write('\n'.join(chunk))
 

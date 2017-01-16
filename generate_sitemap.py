@@ -46,13 +46,17 @@ def do_query(endpoint, query, retry=10):
 SITEMAP_INDEX_XML = """
 <?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+   <sitemap>
+      <loc>http://www.sotasampo.fi/general_urls.txt</loc>
+      <lastmod>2017-01-16</lastmod>
+   </sitemap>
    {sitemaps}
 </sitemapindex>
 """
 
 SITEMAP_INNER_XML = """
    <sitemap>
-      <loc>{location}</loc>
+      <loc>http://www.sotasampo.fi/{file}</loc>
       <lastmod>{lastmod}</lastmod>
    </sitemap>
 """
@@ -85,7 +89,7 @@ for (index, chunk) in enumerate(chunks):
     with open(filename, 'w') as file:
         file.write('\n'.join(chunk))
 
-    sitemaps += SITEMAP_INNER_XML.format(location=filename, lastmod=datetime.utcnow().isoformat())
+    sitemaps += SITEMAP_INNER_XML.format(file=filename, lastmod=datetime.utcnow().isoformat())
 
 # Write sitemap index file
 

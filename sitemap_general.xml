@@ -3,244 +3,244 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>http://www.sotasampo.fi/fi/</loc>
+    <loc>https://www.sotasampo.fi/fi/</loc>
     <xhtml:link
                  rel="alternate"
                  hreflang="fi"
-                 href="http://www.sotasampo.fi/fi/"
+                 href="https://www.sotasampo.fi/fi/"
                  />
     <xhtml:link
                  rel="alternate"
                  hreflang="en"
-                 href="http://www.sotasampo.fi/en/"
+                 href="https://www.sotasampo.fi/en/"
                  />
   </url>
   <url>
-    <loc>http://www.sotasampo.fi/en/</loc>
+    <loc>https://www.sotasampo.fi/en/</loc>
     <xhtml:link
                  rel="alternate"
                  hreflang="fi"
-                 href="http://www.sotasampo.fi/fi/"
+                 href="https://www.sotasampo.fi/fi/"
                  />
     <xhtml:link
                  rel="alternate"
                  hreflang="en"
-                 href="http://www.sotasampo.fi/en/"
-                 />
-  </url>
-
-  <url>
-    <loc>http://www.sotasampo.fi/fi/events/winterwar</loc>
-    <xhtml:link
-                 rel="alternate"
-                 hreflang="fi"
-                 href="http://www.sotasampo.fi/fi/events/winterwar"
-                 />
-    <xhtml:link
-                 rel="alternate"
-                 hreflang="en"
-                 href="http://www.sotasampo.fi/fi/events/winterwar"
-                 />
-  </url>
-  <url>
-    <loc>http://www.sotasampo.fi/en/events/winterwar</loc>
-    <xhtml:link
-                 rel="alternate"
-                 hreflang="fi"
-                 href="http://www.sotasampo.fi/en/events/winterwar"
-                 />
-    <xhtml:link
-                 rel="alternate"
-                 hreflang="en"
-                 href="http://www.sotasampo.fi/en/events/winterwar"
+                 href="https://www.sotasampo.fi/en/"
                  />
   </url>
 
   <url>
-    <loc>http://www.sotasampo.fi/fi/events/continuationwar</loc>
+    <loc>https://www.sotasampo.fi/fi/events/winterwar</loc>
     <xhtml:link
                  rel="alternate"
                  hreflang="fi"
-                 href="http://www.sotasampo.fi/fi/events/continuationwar"
+                 href="https://www.sotasampo.fi/fi/events/winterwar"
                  />
     <xhtml:link
                  rel="alternate"
                  hreflang="en"
-                 href="http://www.sotasampo.fi/en/events/continuationwar"
+                 href="https://www.sotasampo.fi/fi/events/winterwar"
                  />
   </url>
   <url>
-    <loc>http://www.sotasampo.fi/en/events/continuationwar</loc>
+    <loc>https://www.sotasampo.fi/en/events/winterwar</loc>
     <xhtml:link
                  rel="alternate"
                  hreflang="fi"
-                 href="http://www.sotasampo.fi/fi/events/continuationwar"
+                 href="https://www.sotasampo.fi/en/events/winterwar"
                  />
     <xhtml:link
                  rel="alternate"
                  hreflang="en"
-                 href="http://www.sotasampo.fi/en/events/continuationwar"
-                 />
-  </url>
-
-  <url>
-    <loc>http://www.sotasampo.fi/fi/photographs/</loc>
-    <xhtml:link
-                 rel="alternate"
-                 hreflang="fi"
-                 href="http://www.sotasampo.fi/fi/photographs/"
-                 />
-    <xhtml:link
-                 rel="alternate"
-                 hreflang="en"
-                 href="http://www.sotasampo.fi/en/photographs/"
-                 />
-  </url>
-  <url>
-    <loc>http://www.sotasampo.fi/en/photographs/</loc>
-    <xhtml:link
-                 rel="alternate"
-                 hreflang="fi"
-                 href="http://www.sotasampo.fi/fi/photographs/"
-                 />
-    <xhtml:link
-                 rel="alternate"
-                 hreflang="en"
-                 href="http://www.sotasampo.fi/en/photographs/"
+                 href="https://www.sotasampo.fi/en/events/winterwar"
                  />
   </url>
 
   <url>
-    <loc>http://www.sotasampo.fi/fi/units/</loc>
+    <loc>https://www.sotasampo.fi/fi/events/continuationwar</loc>
     <xhtml:link
                  rel="alternate"
                  hreflang="fi"
-                 href="http://www.sotasampo.fi/fi/units/"
+                 href="https://www.sotasampo.fi/fi/events/continuationwar"
                  />
     <xhtml:link
                  rel="alternate"
                  hreflang="en"
-                 href="http://www.sotasampo.fi/en/units/"
+                 href="https://www.sotasampo.fi/en/events/continuationwar"
                  />
   </url>
   <url>
-    <loc>http://www.sotasampo.fi/en/units/</loc>
+    <loc>https://www.sotasampo.fi/en/events/continuationwar</loc>
     <xhtml:link
                  rel="alternate"
                  hreflang="fi"
-                 href="http://www.sotasampo.fi/fi/units/"
+                 href="https://www.sotasampo.fi/fi/events/continuationwar"
                  />
     <xhtml:link
                  rel="alternate"
                  hreflang="en"
-                 href="http://www.sotasampo.fi/en/units/"
-                 />
-  </url>
-
-  <url>
-    <loc>http://www.sotasampo.fi/fi/persons/</loc>
-    <xhtml:link
-                 rel="alternate"
-                 hreflang="fi"
-                 href="http://www.sotasampo.fi/fi/persons/"
-                 />
-    <xhtml:link
-                 rel="alternate"
-                 hreflang="en"
-                 href="http://www.sotasampo.fi/en/persons/"
-                 />
-  </url>
-  <url>
-    <loc>http://www.sotasampo.fi/en/persons/</loc>
-    <xhtml:link
-                 rel="alternate"
-                 hreflang="fi"
-                 href="http://www.sotasampo.fi/fi/persons/"
-                 />
-    <xhtml:link
-                 rel="alternate"
-                 hreflang="en"
-                 href="http://www.sotasampo.fi/en/persons/"
+                 href="https://www.sotasampo.fi/en/events/continuationwar"
                  />
   </url>
 
   <url>
-    <loc>http://www.sotasampo.fi/fi/casualties/</loc>
+    <loc>https://www.sotasampo.fi/fi/photographs/</loc>
     <xhtml:link
                  rel="alternate"
                  hreflang="fi"
-                 href="http://www.sotasampo.fi/fi/casualties/"
+                 href="https://www.sotasampo.fi/fi/photographs/"
                  />
     <xhtml:link
                  rel="alternate"
                  hreflang="en"
-                 href="http://www.sotasampo.fi/en/casualties/"
+                 href="https://www.sotasampo.fi/en/photographs/"
                  />
   </url>
   <url>
-    <loc>http://www.sotasampo.fi/en/casualties/</loc>
+    <loc>https://www.sotasampo.fi/en/photographs/</loc>
     <xhtml:link
                  rel="alternate"
                  hreflang="fi"
-                 href="http://www.sotasampo.fi/fi/casualties/"
+                 href="https://www.sotasampo.fi/fi/photographs/"
                  />
     <xhtml:link
                  rel="alternate"
                  hreflang="en"
-                 href="http://www.sotasampo.fi/en/casualties/"
-                 />
-  </url>
-  <url>
-    <loc>http://www.sotasampo.fi/fi/places/</loc>
-    <xhtml:link
-                 rel="alternate"
-                 hreflang="fi"
-                 href="http://www.sotasampo.fi/fi/places/"
-                 />
-    <xhtml:link
-                 rel="alternate"
-                 hreflang="en"
-                 href="http://www.sotasampo.fi/en/places/"
-                 />
-  </url>
-  <url>
-    <loc>http://www.sotasampo.fi/en/places/</loc>
-    <xhtml:link
-                 rel="alternate"
-                 hreflang="fi"
-                 href="http://www.sotasampo.fi/fi/places/"
-                 />
-    <xhtml:link
-                 rel="alternate"
-                 hreflang="en"
-                 href="http://www.sotasampo.fi/en/places/"
+                 href="https://www.sotasampo.fi/en/photographs/"
                  />
   </url>
 
   <url>
-    <loc>http://www.sotasampo.fi/fi/articles/</loc>
+    <loc>https://www.sotasampo.fi/fi/units/</loc>
     <xhtml:link
                  rel="alternate"
                  hreflang="fi"
-                 href="http://www.sotasampo.fi/fi/articles/"
+                 href="https://www.sotasampo.fi/fi/units/"
                  />
     <xhtml:link
                  rel="alternate"
                  hreflang="en"
-                 href="http://www.sotasampo.fi/en/articles/"
+                 href="https://www.sotasampo.fi/en/units/"
                  />
   </url>
   <url>
-    <loc>http://www.sotasampo.fi/en/articles/</loc>
+    <loc>https://www.sotasampo.fi/en/units/</loc>
     <xhtml:link
                  rel="alternate"
                  hreflang="fi"
-                 href="http://www.sotasampo.fi/fi/articles/"
+                 href="https://www.sotasampo.fi/fi/units/"
                  />
     <xhtml:link
                  rel="alternate"
                  hreflang="en"
-                 href="http://www.sotasampo.fi/en/articles/"
+                 href="https://www.sotasampo.fi/en/units/"
+                 />
+  </url>
+
+  <url>
+    <loc>https://www.sotasampo.fi/fi/persons/</loc>
+    <xhtml:link
+                 rel="alternate"
+                 hreflang="fi"
+                 href="https://www.sotasampo.fi/fi/persons/"
+                 />
+    <xhtml:link
+                 rel="alternate"
+                 hreflang="en"
+                 href="https://www.sotasampo.fi/en/persons/"
+                 />
+  </url>
+  <url>
+    <loc>https://www.sotasampo.fi/en/persons/</loc>
+    <xhtml:link
+                 rel="alternate"
+                 hreflang="fi"
+                 href="https://www.sotasampo.fi/fi/persons/"
+                 />
+    <xhtml:link
+                 rel="alternate"
+                 hreflang="en"
+                 href="https://www.sotasampo.fi/en/persons/"
+                 />
+  </url>
+
+  <url>
+    <loc>https://www.sotasampo.fi/fi/casualties/</loc>
+    <xhtml:link
+                 rel="alternate"
+                 hreflang="fi"
+                 href="https://www.sotasampo.fi/fi/casualties/"
+                 />
+    <xhtml:link
+                 rel="alternate"
+                 hreflang="en"
+                 href="https://www.sotasampo.fi/en/casualties/"
+                 />
+  </url>
+  <url>
+    <loc>https://www.sotasampo.fi/en/casualties/</loc>
+    <xhtml:link
+                 rel="alternate"
+                 hreflang="fi"
+                 href="https://www.sotasampo.fi/fi/casualties/"
+                 />
+    <xhtml:link
+                 rel="alternate"
+                 hreflang="en"
+                 href="https://www.sotasampo.fi/en/casualties/"
+                 />
+  </url>
+  <url>
+    <loc>https://www.sotasampo.fi/fi/places/</loc>
+    <xhtml:link
+                 rel="alternate"
+                 hreflang="fi"
+                 href="https://www.sotasampo.fi/fi/places/"
+                 />
+    <xhtml:link
+                 rel="alternate"
+                 hreflang="en"
+                 href="https://www.sotasampo.fi/en/places/"
+                 />
+  </url>
+  <url>
+    <loc>https://www.sotasampo.fi/en/places/</loc>
+    <xhtml:link
+                 rel="alternate"
+                 hreflang="fi"
+                 href="https://www.sotasampo.fi/fi/places/"
+                 />
+    <xhtml:link
+                 rel="alternate"
+                 hreflang="en"
+                 href="https://www.sotasampo.fi/en/places/"
+                 />
+  </url>
+
+  <url>
+    <loc>https://www.sotasampo.fi/fi/articles/</loc>
+    <xhtml:link
+                 rel="alternate"
+                 hreflang="fi"
+                 href="https://www.sotasampo.fi/fi/articles/"
+                 />
+    <xhtml:link
+                 rel="alternate"
+                 hreflang="en"
+                 href="https://www.sotasampo.fi/en/articles/"
+                 />
+  </url>
+  <url>
+    <loc>https://www.sotasampo.fi/en/articles/</loc>
+    <xhtml:link
+                 rel="alternate"
+                 hreflang="fi"
+                 href="https://www.sotasampo.fi/fi/articles/"
+                 />
+    <xhtml:link
+                 rel="alternate"
+                 hreflang="en"
+                 href="https://www.sotasampo.fi/en/articles/"
                  />
   </url>
 </urlset>

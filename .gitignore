@@ -2,4 +2,6 @@
 .idea
 *.swp
 sitemap_generated_*.txt
+sitemap_generated_*.xml
 sitemap_index.xml
+env

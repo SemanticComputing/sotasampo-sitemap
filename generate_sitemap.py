@@ -59,35 +59,79 @@ SITEMAP_INNER_XML = """   <sitemap>
    </sitemap>
 """
 
-SITEMAP_FILENAME = 'sitemap_generated_{index}.txt'
+PAGE_SITEMAP_XML = """<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  {urls}
+</urlset>"""
+
+PAGE_TEMPLATE = """ <url>
+    <loc>https://www.sotasampo.fi/fi/{app}/page?uri={uri}</loc>
+    <xhtml:link
+                 rel="alternate"
+                 hreflang="fi"
+                 href="https://www.sotasampo.fi/fi/{app}/page?uri={uri}"
+                 />
+    <xhtml:link
+                 rel="alternate"
+                 hreflang="en"
+                 href="https://www.sotasampo.fi/en/{app}/page?uri={uri}"
+                 />
+  </url>
+  <url>
+    <loc>https://www.sotasampo.fi/en/{app}/page?uri={uri}</loc>
+    <xhtml:link
+                 rel="alternate"
+                 hreflang="fi"
+                 href="https://www.sotasampo.fi/fi/{app}/page?uri={uri}"
+                 />
+    <xhtml:link
+                 rel="alternate"
+                 hreflang="en"
+                 href="https://www.sotasampo.fi/en/{app}/page?uri={uri}"
+                 />
+  </url>
+"""
+
+SITEMAP_FILENAME = 'sitemap_generated_{app}_{index}.xml'
 
 ENDPOINT = 'http://ldf.fi/warsa/sparql'
 
 PERSON_QUERY = """
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-SELECT ?uri WHERE {
-  ?uri a ?class .
+SELECT DISTINCT ?uri WHERE {
   ?class rdfs:subClassOf+ <http://www.cidoc-crm.org/cidoc-crm/E21_Person> .
+  ?uri a ?class .
 }
 """
 
-RESOURCE_URL = 'http://www.sotasampo.fi/fi/persons/?uri={uri}'
+UNIT_QUERY = """
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT DISTINCT ?uri WHERE {
+  ?class rdfs:subClassOf+ <http://www.cidoc-crm.org/cidoc-crm/E74_Group> .
+  ?uri a ?class .
+}
+"""
 
 # Get resource URIs
 
-uris = [RESOURCE_URL.format(uri=quote_plus(uri)) for uri in do_query(ENDPOINT, PERSON_QUERY)]
-chunks = np.array_split(uris, len(uris) // 50000 + 1)  # Split into chunks of less than 50000 URIs
+person_uris = [quote_plus(uri) for uri in do_query(ENDPOINT, PERSON_QUERY)]
+person_chunks = np.array_split(person_uris, len(person_uris) // 25000 + 1)  # Split into chunks of less than 25000 URIs
+unit_uris = [quote_plus(uri) for uri in do_query(ENDPOINT, UNIT_QUERY)]
+unit_chunks = np.array_split(unit_uris, len(unit_uris) // 25000 + 1)  # Split into chunks of less than 25000 URIs
 sitemaps = ''
 
 # Write chunks to files
 
-for (index, chunk) in enumerate(chunks):
-    filename = SITEMAP_FILENAME.format(index=index)
-    with open(filename, 'w') as file:
-        file.write('\n'.join(chunk))
+for app, chunks in [('persons', person_chunks), ('units', unit_chunks)]:
+    for (index, chunk) in enumerate(chunks):
+        filename = SITEMAP_FILENAME.format(app=app, index=index)
+        with open(filename, 'w') as file:
+            file.write(PAGE_SITEMAP_XML.format(urls='\n'.join([PAGE_TEMPLATE.format(app=app, uri=page) for page in chunk])))
 
-    sitemaps += SITEMAP_INNER_XML.format(file=filename, lastmod=datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"))
+        sitemaps += SITEMAP_INNER_XML.format(file=filename, lastmod=datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"))
 
 # Write sitemap index file
 

@@ -46,7 +46,7 @@ def do_query(endpoint, query, retry=10):
 SITEMAP_INDEX_XML = """<?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
    <sitemap>
-      <loc>http://www.sotasampo.fi/sitemap_general.xml</loc>
+      <loc>https://www.sotasampo.fi/sitemap_general.xml</loc>
       <lastmod>2017-08-21</lastmod>
    </sitemap>
    {sitemaps}
@@ -54,7 +54,7 @@ SITEMAP_INDEX_XML = """<?xml version="1.0" encoding="UTF-8"?>
 """
 
 SITEMAP_INNER_XML = """   <sitemap>
-      <loc>http://www.sotasampo.fi/{file}</loc>
+      <loc>https://www.sotasampo.fi/{file}</loc>
       <lastmod>{lastmod}</lastmod>
    </sitemap>
 """

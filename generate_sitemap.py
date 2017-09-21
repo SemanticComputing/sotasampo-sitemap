@@ -123,6 +123,14 @@ SELECT DISTINCT ?uri WHERE {
 }
 """
 
+PHOTO_QUERY = """
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT DISTINCT ?uri WHERE {
+  GRAPH <http://ldf.fi/warsa/photographs> { ?uri a <http://ldf.fi/schema/warsa/Photograph> . }
+}
+"""
+
 # Get resource URIs
 
 person_uris = [quote_plus(uri) for uri in do_query(ENDPOINT, PERSON_QUERY)]
@@ -131,11 +139,13 @@ unit_uris = [quote_plus(uri) for uri in do_query(ENDPOINT, UNIT_QUERY)]
 unit_chunks = np.array_split(unit_uris, len(unit_uris) // 25000 + 1)  # Split into chunks of less than 25000 URIs
 event_uris = [quote_plus(uri) for uri in do_query(ENDPOINT, EVENT_QUERY)]
 event_chunks = np.array_split(event_uris, len(event_uris) // 25000 + 1)  # Split into chunks of less than 25000 URIs
+photo_uris = [quote_plus(uri) for uri in do_query(ENDPOINT, PHOTO_QUERY)]
+photo_chunks = np.array_split(photo_uris, len(photo_uris) // 25000 + 1)  # Split into chunks of less than 25000 URIs
 sitemaps = ''
 
 # Write chunks to files
 
-for app, chunks in [('persons', person_chunks), ('units', unit_chunks), ('events', event_chunks)]:
+for app, chunks in [('persons', person_chunks), ('units', unit_chunks), ('events', event_chunks), ('photographs', photo_chunks)]:
     for (index, chunk) in enumerate(chunks):
         filename = SITEMAP_FILENAME.format(app=app, index=index)
         with open(filename, 'w') as file:

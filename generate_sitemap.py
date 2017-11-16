@@ -66,29 +66,29 @@ PAGE_SITEMAP_XML = """<?xml version="1.0" encoding="UTF-8"?>
 </urlset>"""
 
 PAGE_TEMPLATE = """ <url>
-    <loc>https://www.sotasampo.fi/fi/{app}/page?uri={uri}</loc>
+    <loc>https://www.sotasampo.fi/fi/{app}/page/{uri}</loc>
     <xhtml:link
                  rel="alternate"
                  hreflang="fi"
-                 href="https://www.sotasampo.fi/fi/{app}/page?uri={uri}"
+                 href="https://www.sotasampo.fi/fi/{app}/page/{uri}"
                  />
     <xhtml:link
                  rel="alternate"
                  hreflang="en"
-                 href="https://www.sotasampo.fi/en/{app}/page?uri={uri}"
+                 href="https://www.sotasampo.fi/en/{app}/page/{uri}"
                  />
   </url>
   <url>
-    <loc>https://www.sotasampo.fi/en/{app}/page?uri={uri}</loc>
+    <loc>https://www.sotasampo.fi/en/{app}/page/{uri}</loc>
     <xhtml:link
                  rel="alternate"
                  hreflang="fi"
-                 href="https://www.sotasampo.fi/fi/{app}/page?uri={uri}"
+                 href="https://www.sotasampo.fi/fi/{app}/page/{uri}"
                  />
     <xhtml:link
                  rel="alternate"
                  hreflang="en"
-                 href="https://www.sotasampo.fi/en/{app}/page?uri={uri}"
+                 href="https://www.sotasampo.fi/en/{app}/page/{uri}"
                  />
   </url>
 """
@@ -102,7 +102,8 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 SELECT DISTINCT ?uri WHERE {
   ?class rdfs:subClassOf+ <http://www.cidoc-crm.org/cidoc-crm/E21_Person> .
-  ?uri a ?class .
+  ?uri_ a ?class .
+  BIND(REPLACE(STR(?uri_), "^.*/(.*?)$", "$1") AS ?uri)
 }
 """
 
@@ -111,7 +112,8 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 SELECT DISTINCT ?uri WHERE {
   ?class rdfs:subClassOf+ <http://www.cidoc-crm.org/cidoc-crm/E74_Group> .
-  ?uri a ?class .
+  ?uri_ a ?class .
+  BIND(REPLACE(STR(?uri_), "^.*/(.*?)$", "$1") AS ?uri)
 }
 """
 
@@ -119,7 +121,8 @@ EVENT_QUERY = """
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 SELECT DISTINCT ?uri WHERE {
-  GRAPH <http://ldf.fi/warsa/events> { ?uri a [] . }
+  GRAPH <http://ldf.fi/warsa/events> { ?uri_ a [] . }
+  BIND(REPLACE(STR(?uri_), "^.*/(.*?)$", "$1") AS ?uri)
 }
 """
 
@@ -127,7 +130,8 @@ PHOTO_QUERY = """
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 SELECT DISTINCT ?uri WHERE {
-  GRAPH <http://ldf.fi/warsa/photographs> { ?uri a <http://ldf.fi/schema/warsa/Photograph> . }
+  GRAPH <http://ldf.fi/warsa/photographs> { ?uri_ a <http://ldf.fi/schema/warsa/Photograph> . }
+  BIND(REPLACE(STR(?uri_), "^.*/(.*?)$", "$1") AS ?uri)
 }
 """
 
@@ -135,7 +139,8 @@ RANK_QUERY = """
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 SELECT DISTINCT ?uri WHERE {
-  GRAPH <http://ldf.fi/warsa/ranks> { ?uri a <http://ldf.fi/schema/warsa/Rank> . }
+  GRAPH <http://ldf.fi/warsa/ranks> { ?uri_ a <http://ldf.fi/schema/warsa/Rank> . }
+  BIND(REPLACE(STR(?uri_), "^.*/(.*?)$", "$1") AS ?uri)
 }
 """
 

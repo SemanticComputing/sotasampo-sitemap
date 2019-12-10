@@ -340,4 +340,30 @@
                  href="https://www.sotasampo.fi/en/cemeteries/"
                  />
   </url>
+  <url>
+    <loc>https://www.sotasampo.fi/fi/prisoners/</loc>
+    <xhtml:link
+                 rel="alternate"
+                 hreflang="fi"
+                 href="https://www.sotasampo.fi/fi/prisoners/"
+                 />
+    <xhtml:link
+                 rel="alternate"
+                 hreflang="en"
+                 href="https://www.sotasampo.fi/en/prisoners/"
+                 />
+  </url>
+  <url>
+    <loc>https://www.sotasampo.fi/en/prisoners/</loc>
+    <xhtml:link
+                 rel="alternate"
+                 hreflang="fi"
+                 href="https://www.sotasampo.fi/fi/prisoners/"
+                 />
+    <xhtml:link
+                 rel="alternate"
+                 hreflang="en"
+                 href="https://www.sotasampo.fi/en/prisoners/"
+                 />
+  </url>
 </urlset>

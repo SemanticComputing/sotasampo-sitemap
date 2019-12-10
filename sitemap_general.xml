@@ -38,7 +38,7 @@
     <xhtml:link
                  rel="alternate"
                  hreflang="en"
-                 href="https://www.sotasampo.fi/fi/events/winterwar"
+                 href="https://www.sotasampo.fi/en/events/winterwar"
                  />
   </url>
   <url>
@@ -46,7 +46,7 @@
     <xhtml:link
                  rel="alternate"
                  hreflang="fi"
-                 href="https://www.sotasampo.fi/en/events/winterwar"
+                 href="https://www.sotasampo.fi/fi/events/winterwar"
                  />
     <xhtml:link
                  rel="alternate"
@@ -312,6 +312,32 @@
                  rel="alternate"
                  hreflang="en"
                  href="https://www.sotasampo.fi/en/articles/"
+                 />
+  </url>
+  <url>
+    <loc>https://www.sotasampo.fi/fi/cemeteries/</loc>
+    <xhtml:link
+                 rel="alternate"
+                 hreflang="fi"
+                 href="https://www.sotasampo.fi/fi/cemeteries/"
+                 />
+    <xhtml:link
+                 rel="alternate"
+                 hreflang="en"
+                 href="https://www.sotasampo.fi/en/cemeteries/"
+                 />
+  </url>
+  <url>
+    <loc>https://www.sotasampo.fi/en/cemeteries/</loc>
+    <xhtml:link
+                 rel="alternate"
+                 hreflang="fi"
+                 href="https://www.sotasampo.fi/fi/cemeteries/"
+                 />
+    <xhtml:link
+                 rel="alternate"
+                 hreflang="en"
+                 href="https://www.sotasampo.fi/en/cemeteries/"
                  />
   </url>
 </urlset>

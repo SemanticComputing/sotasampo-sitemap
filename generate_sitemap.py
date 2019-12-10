@@ -47,7 +47,7 @@ SITEMAP_INDEX_XML = """<?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
    <sitemap>
       <loc>https://www.sotasampo.fi/sitemap_general.xml</loc>
-      <lastmod>2017-08-30</lastmod>
+      <lastmod>2019-12-10T11:15:13Z</lastmod>
    </sitemap>
    {sitemaps}
 </sitemapindex>
